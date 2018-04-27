@@ -21,11 +21,8 @@ public class UserService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList getSomeUsersJson(@PathParam("usersNumber") int n) {
-        UserDAO oUserDAO = new UserDAO();        
+        UserDAO oUserDAO = new UserDAO();
         return oUserDAO.getAll(n);
     }
 
-    
-    
-    
 }

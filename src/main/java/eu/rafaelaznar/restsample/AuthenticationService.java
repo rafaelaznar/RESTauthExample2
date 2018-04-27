@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eu.rafaelaznar.restsample;
 
 import java.io.IOException;
@@ -16,8 +11,8 @@ public class AuthenticationService {
         if (null == authCredentials) {
             return false;
         }
-        // header value format will be "Basic encodedstring" for Basic
-        // authentication. Example "Basic YWRtaW46YWRtaW4="
+        
+        //"Basic YWRtaW46YWRtaW4="
         final String encodedUserPassword = authCredentials.replaceFirst("Basic" + " ", "");
         String usernameAndPassword = null;
         try {
@@ -30,11 +25,7 @@ public class AuthenticationService {
         final String username = tokenizer.nextToken();
         final String password = tokenizer.nextToken();
 
-        
-        
-        // we have fixed the userid and password as admin
-        // call some UserService/LDAP here
-        boolean authenticationStatus = "admin".equals(username) && "admin".equals(password);
+        boolean authenticationStatus = "admin".equals(username) && "admin".equals(password); //YWRtaW46YWRtaW4=
         
         
         
